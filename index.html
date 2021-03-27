@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width,user-scalable=no"/>
+  <title>Снайпер Дорожкина</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+<body>
+<script type="text/javascript" src="point.js"></script> <!-- подключаем движок -->
+<script type="text/javascript" src="engine.js"></script>
+<script type="text/javascript" src="interface.js"></script>
+<script type="text/javascript" src="level.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+
+game.newLoop('game', function () {
+  game.fill('#D9D9D9');
+  fire = false;
+  drawFon();
+  drawTop();
+  drawInterface();
+  if (fire) {
+    fireTop();
+    }
+});
+
+game.newLoop('menu', function () {
+  //game.body.style.backgroundImage = "url('levels/level1/fon.png')";
+  game.fill('white');
+  drawMenu();
+});
+
+game.startLoop('menu');
+
+</script>
+</body>
+</html>
